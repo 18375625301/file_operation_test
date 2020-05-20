@@ -255,7 +255,7 @@ class juxing:
 # f.setRect()
 # f.getArea()
 
-def
+
 
 
 

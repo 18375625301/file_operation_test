@@ -215,11 +215,45 @@ def show(target,lines,z):
     for each in target.keys():
         text+='【%s】源文件%d个，源代码%d行'%(each,target[each],lines[each])
     g.textbox(msg=msg,title=title,text=text)
-
-
 # msg='请选择你的数据库：'
 # title='浏览文件夹'
 # g.msgbox(msg,title)
 # startdir=g.diropenbox('请选择你的代码库')
 # a,b,c=search(startdir)
 # show(a,b,c)
+
+
+#定义一个类打印名字
+class Person:
+    name='贺鹏艺'
+    def printname(self):
+        print(self.name)
+
+
+
+
+#矩形类求面积
+class juxing:
+    def __init__(self):
+        length=0
+        width=0
+    def setRect(self):
+        a=float(input('矩形长为：'))
+        b=float(input('矩形宽为：'))
+        self.length=a
+        self.width=b
+    def getRect(self):
+        print('矩形长度为%d'%self.length)
+        print('矩形宽度为%d'%self.width)
+    def getArea(self):
+        try:
+            self.area=self.width*self.length
+            print('矩形的面积为%d'%self.area)
+        except:
+            print('没有设定长和宽')
+# f=juxing()
+# f.setRect()
+# f.getArea()
+
+
+

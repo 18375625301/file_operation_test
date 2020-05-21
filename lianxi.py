@@ -304,17 +304,46 @@ for i in range(10):
     newfish=fish()
     fishs.append(newfish)
 
-while True:
-    if not len(fishs):
-        print('鱼儿都吃完了，游戏结束')
-        break
-    if not turtle.power:
-        print('乌龟体力耗尽了')
-        break
-    for eachfish in fishs:
-        a = eachfish.move()
-        b = killerscreen.move()
-        if a == b:
-            killerscreen.power += 20
-            print('鱼%s被吃掉了' % eachfish)
-            fishs.remove(eachfish)
+# while True:
+#     if not len(fishs):
+#         print('鱼儿都吃完了，游戏结束')
+#         break
+#     if not turtle.power:
+#         print('乌龟体力耗尽了')
+#         break
+#     for eachfish in fishs:
+#         a = eachfish.move()
+#         b = killerscreen.move()
+#         if a == b:
+#             killerscreen.power += 20
+#             print('鱼%s被吃掉了' % eachfish)
+#             fishs.remove(eachfish)
+
+
+
+#定义直线断点并计算直线长度
+import math as m
+
+class point:
+    def __init__(self,x=0,y=0):
+        self.x=x
+        self.y=y
+    def getx(self):
+        return self.x
+    def gety(self):
+        return self.y
+
+class line:
+    def __init__(self,p1,p2):
+        self.y1=p1.getx()-p2.getx()
+        self.y2=p1.gety()-p2.gety()
+        self.lengh=m.sqrt(self.y1**2+self.y2**2)
+    def getlength(self):
+        return self.lengh
+
+
+p1=point(4,5)
+p2=point(1,3)
+l=line(p1,p2)
+z=l.getlength()
+print(z)

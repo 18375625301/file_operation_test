@@ -256,6 +256,65 @@ class juxing:
 # f.getArea()
 
 
+#计算游乐园售票价格
+class price:
+    normal=100
+    special=normal*1.2
+    def monday_to_frieday(self):
+        a = int(input('成人数量:'))
+        b = int(input('小孩数量:'))
+        price=self.normal*a+0.5*self.normal*b
+        print('票价为：%d元'%price)
+    def saturday_to_sunday(self):
+        a = int(input('成人数量:'))
+        b = int(input('小孩数量:'))
+        price=self.special*a+0.5*self.special*b
+        print('票价为：%d元' % price)
 
 
+# p=price()
+# p.monday_to_frieday()
 
+###龟龟捕鱼小游戏
+#定义鱼类
+class fish:
+    x=random.randint(0,10)
+    y=random.randint(0,10)
+
+    def move(self):
+        self.y+=random.choice([-1,1])
+        self.x+=random.choice([-1,1])
+        z=(self.x,self.y)
+        return z
+#定义龟类
+class turtle:
+    x = random.randint(0, 10)
+    y = random.randint(0, 10)
+    power=100
+
+    def move(self):
+        self.y+=random.choice([-1,-2,1,2])
+        self.x+=random.choice([-1,-2,1,2])
+        self.power-=1
+        z = (self.x, self.y)
+        return z
+killerscreen=turtle()
+fishs=[]
+for i in range(10):
+    newfish=fish()
+    fishs.append(newfish)
+
+while True:
+    if not len(fishs):
+        print('鱼儿都吃完了，游戏结束')
+        break
+    if not turtle.power:
+        print('乌龟体力耗尽了')
+        break
+    for eachfish in fishs:
+        a = eachfish.move()
+        b = killerscreen.move()
+        if a == b:
+            killerscreen.power += 20
+            print('鱼%s被吃掉了' % eachfish)
+            fishs.remove(eachfish)

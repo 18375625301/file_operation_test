@@ -340,10 +340,25 @@ class line:
         self.lengh=m.sqrt(self.y1**2+self.y2**2)
     def getlength(self):
         return self.lengh
+# p1=point(4,5)
+# p2=point(1,3)
+# l=line(p1,p2)
+# z=l.getlength()
+# print(z)
 
 
-p1=point(4,5)
-p2=point(1,3)
-l=line(p1,p2)
-z=l.getlength()
-print(z)
+
+#摄氏度转换为华氏度
+###第一种方法
+class convert:
+    def gethuashi(self,x):
+        self.x=x*1.8+32
+        return self.x
+C2F=convert()
+print(C2F.gethuashi(32))
+
+###第二种方法
+class C2F(float):
+    def __new__(cls, arg=0.0):
+        return float.__new__(cls,arg*1.8+32)
+print(C2F(32))

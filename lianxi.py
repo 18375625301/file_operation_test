@@ -362,3 +362,46 @@ class C2F(float):
     def __new__(cls, arg=0.0):
         return float.__new__(cls,arg*1.8+32)
 print(C2F(32))
+
+
+#转化字符串为ASC码然后求和
+class str_to_ASC(int):
+    def __new__(cls, x=0):
+        if isinstance(x,str):
+            z=0
+            for each in x:
+                z+=ord(each)
+        return int.__new__(cls,z)
+###实例化
+ASC=str_to_ASC(x='dsdkfkj')
+print(ASC)
+
+
+#字符串相减操作
+class Nstr(str):
+    def __sub__(self, other):
+        return self.replace(other,'')
+
+
+
+class nstr(str):
+    def __init__(self,x):
+        self.x=x
+        self.total=0
+        for each in self.x:
+            self.total+=ord(each)
+    def __sub__(self, other):
+        return self.total-other.total
+    def __add__(self, other):
+        return self.total+other.total
+    def __mul__(self, other):
+        return self.total*other.total
+    def __truediv__(self, other):
+        return self.total/other.total
+    def __floordiv__(self, other):
+        return  self.total//other.total
+
+a=nstr('fsdffds')
+b=nstr('euiur')
+print(a+b)
+

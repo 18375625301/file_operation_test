@@ -401,10 +401,7 @@ class nstr(str):
     def __floordiv__(self, other):
         return  self.total//other.total
 
-a=nstr('fsdffds')
-b=nstr('euiur')
-print(a+b)
-
-
-
+# a=nstr('fsdffds')
+# b=nstr('euiur')
+# print(a+b)
 

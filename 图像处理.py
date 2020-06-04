@@ -25,3 +25,4 @@ img1=Image.open('G:/siamfc tc数据集/tc_Airport_ce/0001.jpg')
 # img1.show()
 # img2.thumbnail((600,360))
 # img2.show()
+img1

@@ -405,3 +405,62 @@ class nstr(str):
 # b=nstr('euiur')
 # print(a+b)
 
+
+
+#统计实例化数目的类
+class count_class:
+    count=0
+    def __init__(self):
+        count_class.count+=1
+    # def get_count(self):
+    #     return count_class.count
+
+a=count_class()
+b=count_class()
+print(count_class.count)
+
+
+#统计输入参数数目的类
+class count_arg:
+
+    def __init__(self,*args):
+        if not args:
+            print('没有输入参数')
+        else:
+            print('输入了%d个参数'%len(args))
+            for each in args:
+                print(each,end=' ')
+a=count_arg(1,3,4,5)
+
+
+
+#####定义华氏度和摄氏度且能转换
+class Celsius:
+    def __init__(self,value=26.0):
+        self.value=float(value)
+    def __get__(self, instance, owner):
+        return self.value
+    def __set__(self, instance, value):
+        self.value=float(value)
+class Fahrenheit:
+    def __get__(self, instance, owner):
+        return instance.cel*1.8+32
+    def __set__(self, instance, value):
+        instance.cel=(float(value)-32)/1.8
+class Temprature:
+    cel=Celsius()
+    fah=Fahrenheit()
+
+class  Countlist:
+    def __init__(self,*args):
+        self.values=[x for x in args]
+        self.count={}.fromkeys(range(len(self.values)),0)
+    def __len__(self):
+        return len(self.values)
+    def __getitem__(self, key):
+        self.count[key]+=1
+        return self.values[key]
+
+
+
+

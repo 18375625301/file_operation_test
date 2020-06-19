@@ -14,7 +14,7 @@ from PIL import Image
 # Image.blend(img2,img1,alpha=0.5).show()
 
 ##按像素缩放图像
-img1=Image.open('G:/siamfc tc数据集/tc_Airport_ce/0001.jpg')
+img1=Image.open('G:/siamfc tc/tc_Airport_ce/0001.jpg')
 # img1.show()
 # #将每个像素都扩大2倍
 # Image.eval(img1,lambda x:x*2).show()

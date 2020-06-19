@@ -421,16 +421,16 @@ print(count_class.count)
 
 
 #统计输入参数数目的类
-class count_arg:
-
-    def __init__(self,*args):
-        if not args:
-            print('没有输入参数')
-        else:
-            print('输入了%d个参数'%len(args))
-            for each in args:
-                print(each,end=' ')
-a=count_arg(1,3,4,5)
+# class count_arg:
+#
+#     def __init__(self,*args):
+#         if not args:
+#             print('没有输入参数')
+#         else:
+#             print('输入了%d个参数'%len(args))
+#             for each in args:
+#                 print(each,end=' ')
+# a=count_arg(1,3,4,5)
 
 
 
@@ -461,6 +461,34 @@ class  Countlist:
         self.count[key]+=1
         return self.values[key]
 
+#有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？
+a=[1,2,3,4]
+def count_third_num(a):
+    total=[]
+    for i in a:
+        for y in a:
+            for z in a:
+                if i!=y and y!=z and i!=z:
+                    total.append(i*100+y*10+z)
+    l=len(total)
+    print('能组成%d个互不相同且无重复数字的三位数,各是'%l,end='')
+    for i in total:
+        print(i,end=' ')
+count_third_num(a)
 
+
+#企业发放的奖金根据利润提成。
+# 利润(I)低于或等于10万元时，奖金可提10%；
+# 利润高于10万元，低于20万元时，
+# 低于10万元的部分按10%提成，高于10万元的部分，可提成7.5%；20万到40万之间时，高于20万元的部分，可提成5%；
+# 40万到60万之间时高于40万元的部分，可提成3%；
+# 60万到100万之间时，高于60万元的部分，可提成1.5%，
+# 高于100万元时，超过100万元的部分按1%提成，从键盘输入当月利润I，求应发放奖金总数？
+
+def money(I):
+    if I<=1e4:
+        reward=I*0.1
+    if 1e4<=I<=2e4:
+        reward=
 
 

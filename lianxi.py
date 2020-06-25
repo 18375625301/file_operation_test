@@ -463,18 +463,18 @@ class  Countlist:
 
 #有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？
 a=[1,2,3,4]
-def count_third_num(a):
-    total=[]
-    for i in a:
-        for y in a:
-            for z in a:
-                if i!=y and y!=z and i!=z:
-                    total.append(i*100+y*10+z)
-    l=len(total)
-    print('能组成%d个互不相同且无重复数字的三位数,各是'%l,end='')
-    for i in total:
-        print(i,end=' ')
-count_third_num(a)
+# def count_third_num(a):
+#     total=[]
+#     for i in a:
+#         for y in a:
+#             for z in a:
+#                 if i!=y and y!=z and i!=z:
+#                     total.append(i*100+y*10+z)
+#     l=len(total)
+#     print('能组成%d个互不相同且无重复数字的三位数,各是'%l,end='')
+#     for i in total:
+#         print(i,end=' ')
+# count_third_num(a)
 
 
 #企业发放的奖金根据利润提成。
@@ -486,15 +486,40 @@ count_third_num(a)
 # 60万到100万之间时，高于60万元的部分，可提成1.5%，
 # 高于100万元时，超过100万元的部分按1%提成，
 # 从键盘输入当月利润I，求应发放奖金总数？
-def money(I):
-    target=0
-    price=[10e5,6e5,4e5,2e5,1e5,0]
-    rate=[0.01,0.015,0.03,0.05,0.075,0.1]
-    for i in range(6):
-        if I>price[i]:
-            target+=(I-price[i])*rate[i]
-            I=price[i]
-    print(target)
-money(10.9e5)
+# def money(I):
+#     target=0
+#     price=[10e5,6e5,4e5,2e5,1e5,0]
+#     rate=[0.01,0.015,0.03,0.05,0.075,0.1]
+#     for i in range(6):
+#         if I>price[i]:
+#             target+=(I-price[i])*rate[i]
+#             I=price[i]
+#     print(target)
+# money(10.9e5)
 
 
+# import math
+# ###一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？
+# i=0
+# while True:
+#     if math.sqrt(i+100)%1==0 and math.sqrt(i+268)%1==0:
+#         print(i)
+#         break
+#     else:
+#         i+=1
+
+
+###输入某年某月某日，判断这一天是这一年的第几天？
+
+def date_to_day():
+    years=int(input("years:"))
+    month=int(input('month:'))
+    day=int(input('day:'))
+    if years in [1696,1708,1712,1716,1720,1724,1728,1732,1736,1740,1744,1748,1752,1756,1760,1764,1768,1772,1776,1780,1784,1788,1792,1798,1804,1808,1812,1816,1820,1824,1828,1832,1836,1840,1844,1848,1852,1856,1860,1864,1868,1872,1876,1880,1884,1888,1892,1896,1904,1908,1912,1916,1920,1924,1928,1932,1936,1940,1944,1948,1952,1956,1960,1964,1968,1972,1976,1980,1984,1988,1992,1996,2000,2004,2008,2012,2016,2020,2024,2028,2032]:
+        month_date=[0,31,60,91,121,152,182,213,244,274,305,335]
+    else:
+        month_date=[0,31,59,90,120,151,181,212,243,273,304,334]
+    date=month_date[month-1]+day
+    print(date)
+
+date_to_day()

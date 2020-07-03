@@ -526,17 +526,93 @@ a=[1,2,3,4]
 
 
 #输入三个整数x,y,z，请把这三个数由小到大输出
-def sort():
-    x=int(input('请输入x:'))
-    y=int(input('请输入y:'))
-    z=int(input('请输入z:'))
-    total=[]
-    total.append(x)
-    total.append(y)
-    total.append(z)
-    total.sort()
-    total.reverse()
-    for i in range(3):
-        k=total.pop()
-        print(k,end=' ')
-sort()
+# def sort():
+#     x=int(input('请输入x:'))
+#     y=int(input('请输入y:'))
+#     z=int(input('请输入z:'))
+#     total=[]
+#     total.append(x)
+#     total.append(y)
+#     total.append(z)
+#     total.sort()
+#     total.reverse()
+#     for i in range(3):
+#         k=total.pop()
+#         print(k,end=' ')
+# sort()
+
+###斐波那契数列
+# def feibonaqie(x):
+# #     if x==0:
+# #         return 0
+# #     if x==1:
+# #         return 1
+# #     else:
+# #         total=feibonaqie(x-1)+feibonaqie(x-2)
+# #         return total
+
+#将一个列表的数据复制到另一个列表中。
+# def copy(d):
+#     a=[]
+#     for i in range(len(d)):
+#         y=d.pop()
+#         a.append(y)
+#     a.reverse()
+#     print(a)
+# target=[1,2,6,7,4,5]
+# copy(target)
+
+#输出 9*9 乘法口诀表。
+# for i in range(1,10):
+#     for j in range(1,i+1):
+#         print('%d*%d=%d'%(j,i,i*j),end='')
+#     print('\n')
+
+#暂停一秒输出。
+# import time
+# a=[1,2,3,4,5,6,7]
+# for i in a:
+#     print(i)
+#     time.sleep(1)
+
+#暂停一秒输出，并格式化当前时间。
+# import time
+# print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+# time.sleep(1)
+# print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+
+#古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？
+# def rabbit_coutfun(n):
+#     if n<=2:
+#         return 2
+#     if n%2==1:
+#         return (n//2*2*(n%2))+rabbit_coutfun(n//2)
+#     if n%2==0:
+#         return ((n//2-1)*2*2+rabbit_coutfun(n-2))
+# print(rabbit_coutfun(10)//2)
+
+#判断101-200之间有多少个素数，并输出所有素数。
+import math
+# for i in range(101,201):
+#     total=0
+#     for y in range(2,i):
+#         if i%y==0:
+#             total+=1
+#     if total==0:
+#         print(i)
+
+#利用for循环控制100-999个数，每个数分解出个位，十位，百位。
+# for i in range(100,1000):
+#     a=i//100
+#     b=i//10%10
+#     c=i%100%10
+#     print('%d的百位是%d，十位是%d，个位是%d'%(i,a,b,c))
+
+#将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。
+def split_count(n):
+
+
+
+
+
+
